@@ -29,6 +29,11 @@ public class MeleeAI : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         alive = true;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        //Bat che do Inter
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        rb.interpolation = RigidbodyInterpolation.Extrapolate;
+        rb.interpolation = RigidbodyInterpolation.None;
     }
 
     // Update is called once per frame

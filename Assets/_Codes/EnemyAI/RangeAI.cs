@@ -29,6 +29,11 @@ public class RangeAI : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         explosionAudioSource = GameObject.FindGameObjectWithTag("swordSrc").GetComponent<AudioSource>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        //Bat che do Inter
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        rb.interpolation = RigidbodyInterpolation.Extrapolate;
+        rb.interpolation = RigidbodyInterpolation.None;
     }
 
     // Update is called once per frame
